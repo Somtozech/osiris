@@ -33,9 +33,7 @@ module.exports = {
     },
     ropsten: {
       url: process.env.ROPSTEN_URL,
-      accounts: {
-        mnemonic: process.env.MNEMONIC,
-      },
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
   },
 };

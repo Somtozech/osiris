@@ -1,7 +1,7 @@
-const SuccessMsg = ({ url }) => {
+const SuccessMsg = ({ url, closeToast }) => {
   return (
     <>
-      <div style={{ padding: 10 }}>
+      <div style={{ padding: 10 }} onClick={closeToast}>
         Minting successful.{" "}
         <a href={url} target="_blank" rel="noreferrer">
           {url}
