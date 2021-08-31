@@ -6,28 +6,11 @@ import { ethers } from "ethers";
 import IpfsClient from "./utils/ipfs";
 import TokenArtifact from "./contracts/Token.json";
 import contractAddress from "./contracts/contract-address.json";
-
 import Icon from "./components/Icon";
 import SuccessMsg from "./components/UploadSucessMessage";
-
 import { acceptStyle, baseStyle, rejectStyle, activeStyle } from "./theme";
 import { readFileAsBuffer, createURLFromFile } from "./utils/files";
-
-async function requestAccount() {
-  try {
-    await window.ethereum.request({
-      method: "eth_requestAccounts",
-    });
-
-    return true;
-  } catch (error) {
-    console.error(error);
-
-    toast.warn("You need a metamask account to mint token");
-
-    return false;
-  }
-}
+import requestAccount from "./utils/requestAccount";
 
 function App() {
   const [file, setFile] = useState(null);
