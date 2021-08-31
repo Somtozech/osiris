@@ -13,6 +13,30 @@ async function main() {
   await token.deployed();
 
   console.log("Token Deployed to", token.address);
+
+  // We also save the contract's artifacts and address in the frontend directory
+  saveFrontendFiles(token);
+}
+
+function saveFrontendFiles(token) {
+  const fs = require("fs");
+  const contractsDir = __dirname + "/../frontend/src/contracts";
+
+  if (!fs.existsSync(contractsDir)) {
+    fs.mkdirSync(contractsDir);
+  }
+
+  fs.writeFileSync(
+    contractsDir + "/contract-address.json",
+    JSON.stringify({ Token: token.address }, undefined, 2)
+  );
+
+  const TokenArtifact = artifacts.readArtifactSync("Token");
+
+  fs.writeFileSync(
+    contractsDir + "/Token.json",
+    JSON.stringify(TokenArtifact, null, 2)
+  );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
