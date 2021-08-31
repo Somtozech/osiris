@@ -1,13 +1,61 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  text-size-adjust: 100%;
+  box-sizing: inherit;
+  text-rendering: optimizelegibility;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color: rgba(29, 29, 29);
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.upload-section {
+  background-color: rgba(29, 29, 29);
+  border-radius: 20px;
+  max-width: 450px;
+  padding: 50px;
+  border: none;
+  width: 100%;
+  min-height: 450px;
+  box-shadow: -5px 0px 10px #646363;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-section h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.upload-section button {
+  background-color: #15a791;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 30px auto;
 }
